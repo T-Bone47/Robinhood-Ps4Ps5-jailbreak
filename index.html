@@ -1,4 +1,94 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#063f73"><title>Robinhood — PS4 Jailbreak Host</title><link rel="stylesheet" href="frontend/css/base.css"><link rel="stylesheet" href="frontend/css/ops-theme.css"><link rel="stylesheet" href="frontend/css/ps4-host.css"></head><body class="ps4-host"><header class="ps4-header"><h1 id="page-title">PS4 Jailbreak</h1><span id="build-badge" class="build-badge"></span></header><main class="ps4-main"><section id="firmware-picker" class="host-section"><div class="support-note"><strong>Robinhood PS4 Host</strong><span>Local firmware routing and utility interface</span></div><div class="host-health-row"><span id="health-badge" class="health-badge">Checking host…</span></div><div class="detect-row"><button id="auto-detect" class="secondary-button">AUTO DETECT FIRMWARE</button><span id="detect-result">Waiting for console detection…</span></div><div id="firmware-buttons" class="firmware-buttons" role="group" aria-label="Firmware"></div></section><section id="firmware-page" class="firmware-page hidden"><div class="firmware-heading"><button id="back" class="back-button">← Firmware</button><div><div class="eyebrow">Selected route</div><h2 id="firmware-title">PS4 Jailbreak</h2></div><span id="firmware-status" class="host-badge">LOCKED</span></div><div class="firmware-summary"><span><b id="summary-tools">0</b> tools</span><span><b id="summary-locked">0</b> locked</span><span id="summary-execution">LOCKED</span></div><div id="quick-actions" class="quick-actions"></div><div class="primary-action-wrap"><button id="primary-action" class="tool-button primary-tool">Exploit + GoldHEN</button></div><div class="tool-divider"></div><div id="tool-grid" class="tool-grid"></div><div class="host-console"><div class="console-title"><span>Robinhood status</span><span id="console-state">READY</span></div><pre id="host-log">Select an action.</pre></div></section></main><script src="frontend/js/host-status.js"></script><script src="frontend/js/firmware-session.js"></script><script src="frontend/js/navigation.js"></script><script src="frontend/js/build-info.js"></script><script src="frontend/js/host-health.js"></script><script src="frontend/js/firmware-summary.js"></script><script src="frontend/js/quick-actions.js"></script><script>
-(async()=>{const data=await fetch('frontend/firmware-tool-catalog.json').then(r=>r.json());const picker=document.getElementById('firmware-picker'),page=document.getElementById('firmware-page'),title=document.getElementById('firmware-title'),pageTitle=document.getElementById('page-title'),status=document.getElementById('firmware-status'),grid=document.getElementById('tool-grid'),primary=document.getElementById('primary-action'),log=document.getElementById('host-log'),state=document.getElementById('console-state'),buttons=document.getElementById('firmware-buttons');document.getElementById('build-badge').textContent=`Robinhood ${RobinhoodBuildInfo.get().version}`;document.getElementById('health-badge').textContent=RobinhoodHostHealth.evaluate().status.replaceAll('_',' ');Object.keys(data.profiles).forEach(fw=>{const b=document.createElement('button');b.textContent=fw;b.dataset.firmware=fw;b.onclick=()=>showProfile(fw);buttons.appendChild(b)});function showProfile(fw){const p=data.profiles[fw];if(!p)return;picker.classList.add('hidden');page.classList.remove('hidden');title.textContent=p.title;pageTitle.textContent=p.title;status.textContent=p.executionState||'LOCKED';RobinhoodNavigation.firmware(fw);RobinhoodFirmwareSession.write({firmware:fw,profile:p.title,status:'ROUTE_SELECTED'});const cards=p.toolCards||[];document.getElementById('summary-tools').textContent=cards.length;document.getElementById('summary-locked').textContent=cards.filter(x=>x.state==='LOCKED_UNTIL_VALIDATED').length;document.getElementById('summary-execution').textContent=p.executionState||'LOCKED';document.getElementById('quick-actions').innerHTML='';grid.innerHTML='';cards.forEach(card=>{const b=document.createElement('button');b.className='tool-button utility-card';b.innerHTML=`<span>${card.name}</span><small>${card.category} · ${card.state}</small>`;b.onclick=()=>{RobinhoodHostStatus.set('LOCKED',`${card.name} selected — verified adapter required.`);state.textContent='LOCKED';log.textContent=`[+] ${card.name} selected\n[+] Firmware: ${fw}\n[!] Execution remains gated until hardware verification.`};grid.appendChild(b)});primary.textContent=p.primary||'Exploit + GoldHEN';primary.onclick=()=>{RobinhoodHostStatus.set('EXECUTION_WAITING',`${primary.textContent} request held behind the verified-adapter gate.`);state.textContent='EXECUTION_WAITING';log.textContent=`[+] ${primary.textContent}\n[+] Firmware route: ${fw}\n[!] Execution request held behind verification.`}}document.getElementById('back').onclick=()=>{page.classList.add('hidden');picker.classList.remove('hidden');pageTitle.textContent='PS4 Jailbreak';RobinhoodHostStatus.set('READY','Host ready.')};document.getElementById('auto-detect').onclick=()=>document.getElementById('detect-result').textContent='PS4 firmware could not be detected from this browser.'})();
-</script></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#02070b"><title>Robinhood — PS4 Jailbreak Host</title>
+<link rel="stylesheet" href="frontend/css/base.css"><link rel="stylesheet" href="frontend/css/ops-theme.css"><link rel="stylesheet" href="frontend/css/ps4-host.css">
+</head>
+<body class="ps4-host">
+<div class="scanlines" aria-hidden="true"></div>
+<header class="ps4-header">
+  <div class="brand-chip"><span class="brand-mark">◈</span><div><b>ROBINHOOD v0.1.55</b><small>MERGED FIXED HOST</small></div></div>
+  <div class="brand-title"><strong>ROBINHOOD</strong><span>PS4 JAILBREAK HOST</span></div>
+  <div class="top-status"><span>HOST STATUS <b>ONLINE</b></span><i></i><span>ADAPTERS <b id="adapter-count">8/8 READY</b></span><i></i><span>TIME <b id="clock">--:--:--</b></span></div>
+  <span id="build-badge" class="build-badge"></span>
+</header>
+<main class="ps4-main">
+  <section class="hero-grid">
+    <aside class="panel system-panel">
+      <h3>SYSTEM INFO</h3>
+      <div class="stat"><span>⚙ HOST VERSION</span><b>v0.1.55</b></div>
+      <div class="stat"><span>▣ PLATFORM</span><b>PS4</b></div>
+      <div class="stat"><span>◉ HOST STATUS</span><b class="ok">ONLINE</b></div>
+      <div class="stat"><span>⌘ ADAPTERS</span><b class="ok" id="side-adapters">8/8 READY</b></div>
+      <div class="stat"><span>◷ UPTIME</span><b>00:12:45</b></div>
+      <div class="stat"><span>⌖ CONNECTED</span><b>LOCALHOST</b></div>
+    </aside>
+    <section class="hero-center">
+      <div class="hero-backdrop"><div class="hero-glow"></div><div class="hero-silhouette">ROBINHOOD</div></div>
+      <div class="route-ready"><span>⌖</span> READY FOR ROUTE SELECTION</div>
+      <div class="detect-row">
+        <button id="auto-detect" class="cyber-button primary-outline"><span>◉</span> AUTO DETECT FIRMWARE <small>Detect firmware via console</small></button>
+        <div class="detect-status"><span id="health-badge" class="health-badge">READY</span><span id="detect-result">Waiting for console detection…</span><div class="signal-dots"><i></i><i></i><i></i></div></div>
+      </div>
+    </section>
+    <aside class="panel quick-panel">
+      <h3>QUICK ACTIONS</h3>
+      <button class="quick-action" data-action="detect">◉ <span>AUTO DETECT FIRMWARE<small>Detect firmware via console</small></span>›</button>
+      <button class="quick-action" data-action="routes">✥ <span>ROUTE ANALYZER<small>Analyze firmware routes</small></span>›</button>
+      <button class="quick-action" data-action="payload">⌗ <span>PAYLOAD STATUS<small>View payload compatibility</small></span>›</button>
+      <button class="quick-action" data-action="diagnostics">⌘ <span>SYSTEM DIAGNOSTICS<small>Run host diagnostics</small></span>›</button>
+    </aside>
+  </section>
+
+  <section class="workspace-grid">
+    <aside class="panel legend-panel">
+      <h3>LEGEND</h3>
+      <div class="legend-row"><i class="dot supported"></i><span><b>SUPPORTED</b><small>Verified route evidence</small></span></div>
+      <div class="legend-row"><i class="dot research"></i><span><b>RESEARCH</b><small>Partial research available</small></span></div>
+      <div class="legend-row"><i class="dot limited"></i><span><b>LIMITED</b><small>Limited evidence</small></span></div>
+      <div class="legend-row"><i class="dot locked"></i><span><b>LOCKED</b><small>Verification gate not satisfied</small></span></div>
+      <div class="risk-box">⚠ USE AT YOUR OWN RISK</div>
+    </aside>
+
+    <section id="firmware-picker" class="firmware-zone">
+      <div class="section-title"><span>SELECT YOUR PS4 FIRMWARE</span><small>CHOOSE YOUR EXACT SYSTEM SOFTWARE VERSION</small></div>
+      <div id="firmware-buttons" class="firmware-buttons" role="group" aria-label="PS4 firmware"></div>
+      <div class="matrix-note"><span>●</span> Routes are evidence-gated. A listed firmware is not automatically a verified exploit.</div>
+    </section>
+
+    <aside class="panel security-panel">
+      <h3>SECURITY NOTICE</h3><div class="security-icon">⌁<span>🔒</span></div>
+      <p>This host separates research, simulated adapters, unverified payloads and runtime execution.</p>
+      <p>Do not treat a firmware tile as proof of hardware compatibility.</p>
+      <div class="no-warranty">⚠ NO WARRANTY ⚠</div>
+    </aside>
+  </section>
+
+  <section id="firmware-page" class="firmware-page hidden">
+    <div class="firmware-heading"><button id="back" class="back-button">← Firmware</button><div><div class="eyebrow">SELECTED ROUTE</div><h2 id="firmware-title">PS4 Jailbreak</h2></div><span id="firmware-status" class="host-badge">LOCKED</span></div>
+    <div class="firmware-summary"><span><b id="summary-tools">0</b> tools</span><span><b id="summary-locked">0</b> locked</span><span id="summary-execution">LOCKED</span></div>
+    <div id="quick-actions" class="quick-actions"></div><div class="primary-action-wrap"><button id="primary-action" class="tool-button primary-tool">Exploit + GoldHEN</button></div>
+    <div class="tool-divider"></div><div id="tool-grid" class="tool-grid"></div>
+    <div class="host-console"><div class="console-title"><span>Robinhood status</span><span id="console-state">READY</span></div><pre id="host-log">Select an action.</pre></div>
+  </section>
+</main>
+<footer class="ps4-footer"><span>◉ CONNECTION <b>LOCALHOST</b></span><span>⊞ PROTOCOL <b>TCP/IP</b></span><span>◈ PORT <b>9020</b></span><strong>ROBINHOOD PS4 HOST v0.1.55<small>BUILT WITH ♥ BY NEMOTRON</small></strong><span>⌘ ADAPTERS <b>8/8 READY</b></span><span>▦ PAYLOADS <b>GATED</b></span><span>◉ DB STATUS <b>CONNECTED</b></span></footer>
+<script src="frontend/js/host-status.js"></script><script src="frontend/js/firmware-session.js"></script><script src="frontend/js/navigation.js"></script><script src="frontend/js/build-info.js"></script><script src="frontend/js/host-health.js"></script><script src="frontend/js/firmware-summary.js"></script><script src="frontend/js/quick-actions.js"></script>
+<script>
+(async()=>{
+ const data=await fetch('frontend/firmware-tool-catalog.json').then(r=>r.json());
+ const picker=document.getElementById('firmware-picker'),page=document.getElementById('firmware-page'),title=document.getElementById('firmware-title'),pageTitle=document.getElementById('page-title'),status=document.getElementById('firmware-status'),grid=document.getElementById('tool-grid'),primary=document.getElementById('primary-action'),log=document.getElementById('host-log'),state=document.getElementById('console-state'),buttons=document.getElementById('firmware-buttons');
+ document.getElementById('build-badge').textContent=`Robinhood ${RobinhoodBuildInfo.get().version}`;
+ const health=RobinhoodHostHealth.evaluate();document.getElementById('health-badge').textContent=(health.status||'READY').replaceAll('_',' ');
+ function clock(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-GB');}clock();setInterval(clock,1000);
+ const order=['5.05','6.72','7.00','7.02','7.55','7.5X','8.03','8.52','9.00','9.60','10.00','10.01','10.50','10.70','10.71','11.00','11.02','12.02','12.50','12.52','12.02-12.52'];
+ function classify(p){if(p.matrixStatus==='REPORTED')return ['research','RESEARCH'];if(p.matrixStatus==='PARTIAL')return ['research','RESEARCH'];return ['locked','LOCKED'];}
+ order.filter(f=>data.profiles[f]).forEach(fw=>{const p=data.profiles[fw],c=classify(p),b=document.createElement('button');b.className=`firmware-tile ${c[0]}`;b.innerHTML=`<strong>${fw}</strong><span><i></i>${c[1]}</span>`;b.title=`${p.title} — ${c[1]}`;b.onclick=()=>showProfile(fw);buttons.appendChild(b);});
+ function showProfile(fw){const p=data.profiles[fw];if(!p)return;picker.classList.add('hidden');document.querySelector('.workspace-grid').classList.add('hidden');document.querySelector('.hero-grid').classList.add('hidden');page.classList.remove('hidden');title.textContent=p.title;status.textContent=p.executionState||'LOCKED';RobinhoodNavigation.firmware(fw);RobinhoodFirmwareSession.write({firmware:fw,profile:p.title,status:'ROUTE_SELECTED'});const cards=p.toolCards||[];document.getElementById('summary-tools').textContent=cards.length;document.getElementById('summary-locked').textContent=cards.filter(x=>x.state==='LOCKED_UNTIL_VALIDATED').length;document.getElementById('summary-execution').textContent=p.executionState||'LOCKED';grid.innerHTML='';cards.forEach(card=>{const b=document.createElement('button');b.className='tool-button utility-card';b.innerHTML=`<span>${card.name}</span><small>${card.category} · ${card.state}</small>`;b.onclick=()=>{RobinhoodHostStatus.set('LOCKED',`${card.name} selected — verified adapter required.`);state.textContent='LOCKED';log.textContent=`[+] ${card.name} selected\n[+] Firmware: ${fw}\n[!] Execution remains gated until hardware verification.`};grid.appendChild(b);});primary.textContent=p.primary||'Exploit + GoldHEN';primary.onclick=()=>{RobinhoodHostStatus.set('EXECUTION_WAITING',`${primary.textContent} request held behind the verified-adapter gate.`);state.textContent='EXECUTION_WAITING';log.textContent=`[+] ${primary.textContent}\n[+] Firmware route: ${fw}\n[!] Execution request held behind verification.`};}
+ document.getElementById('back').onclick=()=>{page.classList.add('hidden');document.querySelector('.workspace-grid').classList.remove('hidden');document.querySelector('.hero-grid').classList.remove('hidden');picker.classList.remove('hidden');RobinhoodHostStatus.set('READY','Host ready.')};
+ document.getElementById('auto-detect').onclick=()=>document.getElementById('detect-result').textContent='PS4 firmware could not be detected from this browser.';
+ document.querySelectorAll('[data-action]').forEach(b=>b.onclick=()=>{const a=b.dataset.action;document.getElementById('detect-result').textContent=a==='detect'?'Detection requires console-side support in this browser.':a.toUpperCase()+' module ready — route remains evidence-gated.';});
+})();
+</script>
+</body></html>
