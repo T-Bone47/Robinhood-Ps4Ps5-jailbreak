@@ -1,0 +1,1 @@
+window.RobinhoodQuickActions=(()=>{function build(profile){return(profile?.toolCards||[]).slice(0,4).map(x=>x.name)}return{build}})();
