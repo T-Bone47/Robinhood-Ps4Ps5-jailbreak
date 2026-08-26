@@ -1,0 +1,1 @@
+window.RobinhoodNavigation=(()=>{let current={screen:'HOME',firmware:null,tool:null};const snapshot=()=>JSON.parse(JSON.stringify(current));function firmware(fw){current={screen:'FIRMWARE',firmware:fw,tool:null};return snapshot()}return{firmware,snapshot}})();
