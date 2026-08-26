@@ -1,0 +1,1 @@
+window.RobinhoodFirmwareSession=(()=>{const KEY='robinhood.firmware.session.v1';function read(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch(_){return{}}}function write(patch){const next={...read(),...patch};localStorage.setItem(KEY,JSON.stringify(next));return next}return{read,write}})();
