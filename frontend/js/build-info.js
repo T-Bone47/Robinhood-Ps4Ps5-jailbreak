@@ -1,0 +1,1 @@
+window.RobinhoodBuildInfo=(()=>{const info={app:'Robinhood',version:'0.1.55',channel:'merged-fixed'};return{get:()=>({...info})}})();
