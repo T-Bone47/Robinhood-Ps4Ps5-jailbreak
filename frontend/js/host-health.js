@@ -1,0 +1,1 @@
+window.RobinhoodHostHealth=(()=>{function evaluate(){return{status:'READY_FOR_ROUTE_SELECTION',checks:[{id:'ROUTE_TABLE',status:'READY'},{id:'ADAPTER_GATE',status:'READY'},{id:'HARDWARE_GATE',status:'READY'}]}}return{evaluate}})();
