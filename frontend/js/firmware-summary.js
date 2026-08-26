@@ -1,0 +1,1 @@
+window.RobinhoodFirmwareSummary=(()=>{function build(profile){const tools=profile?.toolCards||[];return{title:profile?.title||'PS4 Jailbreak',primary:profile?.primary||'Exploit + GoldHEN',toolCount:tools.length,lockedCount:tools.filter(x=>x.state==='LOCKED_UNTIL_VALIDATED').length,execution:profile?.executionState||'LOCKED'}}return{build}})();
