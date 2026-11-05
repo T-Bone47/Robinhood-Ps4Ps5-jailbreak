@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "profiles": {
     "6.72": {
       "title": "PS4 Jailbreak 6.72",
@@ -9,17 +9,6 @@
     },
     "7.02": {
       "title": "PS4 Jailbreak 7.02",
-      "primary": "Exploit + GoldHEN",
-      "toolCards": [],
-      "executionState": "LOCKED",
-      "routeCandidates": [
-        "PSFree + Lapse (upstream range candidate)",
-        "CSSFontFace + Lapse (upstream range candidate)"
-      ],
-      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
-    },
-    "7.5X": {
-      "title": "PS4 Jailbreak 7.5X",
       "primary": "Exploit + GoldHEN",
       "toolCards": [],
       "executionState": "LOCKED",
@@ -235,17 +224,6 @@
       ],
       "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
     },
-    "12.02-12.52": {
-      "title": "PS4 Firmware 12.02-12.52",
-      "primary": "Exploit + GoldHEN",
-      "toolCards": [],
-      "executionState": "LOCKED",
-      "matrixStatus": "REPORTED",
-      "routeCandidates": [
-        "Slopkit + Lapse (upstream range candidate)"
-      ],
-      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
-    },
     "9.03": {
       "title": "PS4 Firmware 9.03",
       "primary": "Open WebKitty route selector",
@@ -386,7 +364,90 @@
         "Slopkit + Relapse (upstream range candidate)"
       ],
       "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "5.07": {
+      "title": "PS4 Firmware 5.07",
+      "primary": "Open upstream firmware route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "Dedicated firmware-specific host (upstream entry candidate)"
+      ],
+      "evidenceNote": "Upstream project range/entry-point candidate only. Exact point-release compatibility and Robinhood hardware execution have not been verified."
+    },
+    "7.01": {
+      "title": "PS4 Firmware 7.01",
+      "primary": "Open upstream firmware route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream project range/entry-point candidate only. Exact point-release compatibility and Robinhood hardware execution have not been verified."
+    },
+    "7.50": {
+      "title": "PS4 Firmware 7.50",
+      "primary": "Open upstream firmware route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream project range/entry-point candidate only. Exact point-release compatibility and Robinhood hardware execution have not been verified."
+    },
+    "7.51": {
+      "title": "PS4 Firmware 7.51",
+      "primary": "Open upstream firmware route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream project range/entry-point candidate only. Exact point-release compatibility and Robinhood hardware execution have not been verified."
+    },
+    "8.00": {
+      "title": "PS4 Firmware 8.00",
+      "primary": "Open upstream firmware route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream project range/entry-point candidate only. Exact point-release compatibility and Robinhood hardware execution have not been verified."
+    },
+    "8.01": {
+      "title": "PS4 Firmware 8.01",
+      "primary": "Open upstream firmware route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream project range/entry-point candidate only. Exact point-release compatibility and Robinhood hardware execution have not been verified."
+    },
+    "8.50": {
+      "title": "PS4 Firmware 8.50",
+      "primary": "Open upstream firmware route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream project range/entry-point candidate only. Exact point-release compatibility and Robinhood hardware execution have not been verified."
     }
   },
-  "matrixNote": "Firmware route candidates are sourced from the pinned WebKitty route metadata. They are not proof of exact-firmware success or Robinhood hardware validation."
+  "matrixNote": "Exact firmware entries reflect upstream project documentation and route ranges. CANDIDATE is not a verified exploit or successful GoldHEN execution. Robinhood hardware testing is pending; execution remains locked."
 }
