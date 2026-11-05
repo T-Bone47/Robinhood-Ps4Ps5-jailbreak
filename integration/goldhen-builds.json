@@ -7,7 +7,7 @@
       "version": "2.4b18",
       "channel": "OFFICIAL",
       "source": "https://github.com/GoldHEN/GoldHEN/releases/tag/2.4b18",
-      "downloadPage": "https://github.com/GoldHEN/GoldHEN/releases/tag/2.4b18",
+      "downloadPage": "https://github.com/GoldHEN/GoldHEN/releases/download/2.4b18/GoldHEN_v2.4b18.7z",
       "supportedFirmwares": [
         "5.05",
         "6.71",
@@ -22,14 +22,19 @@
         "11.00"
       ],
       "status": "OFFICIAL_RELEASE_DOCUMENTED",
-      "binaryBundled": false
+      "binaryBundled": false,
+      "artifactName": "GoldHEN_v2.4b18.7z",
+      "artifactSizeBytes": 258065,
+      "releasePrerelease": true,
+      "artifactSha256": null,
+      "artifactNote": "Official release asset; SHA-256 has not been computed by Robinhood. Verify after download."
     },
     {
       "id": "goldhen-community-2.4b18.12",
       "version": "2.4b18.12",
       "channel": "COMMUNITY_REPACKAGED",
       "source": "https://github.com/EEJTek/GoldHEN_v2.4b18.12",
-      "downloadPage": "https://github.com/EEJTek/GoldHEN_v2.4b18.12",
+      "downloadPage": "https://raw.githubusercontent.com/EEJTek/GoldHEN_v2.4b18.12/main/goldhen.bin",
       "supportedFirmwares": [
         "5.05",
         "5.07",
@@ -73,7 +78,14 @@
       ],
       "status": "COMMUNITY_CLAIM_NOT_OFFICIAL",
       "binaryBundled": false,
-      "caveat": "The repository README claims these firmware versions. The official GoldHEN project does not publish this release; verify artifact provenance and exact firmware support independently."
+      "caveat": "The repository README claims these firmware versions. The official GoldHEN project does not publish this release; verify artifact provenance and exact firmware support independently.",
+      "artifactName": "goldhen.bin",
+      "artifactSizeBytes": 293120,
+      "gitBlobSha1": "b9c254cb5171f82d8824794c184b968e5c604b24",
+      "sourceCommit": "166c8c5fc1c51cb1de7d81de941e27b2346fd96b",
+      "sourceCommitSignature": "UNSIGNED",
+      "artifactSha256": null,
+      "artifactNote": "Direct raw binary from an unsigned community repository commit. Git blob SHA-1 identifies the Git object only; it is not an authenticity signature or SHA-256 checksum."
     }
   ],
   "selectionRules": [
@@ -87,5 +99,6 @@
       "preferredBuild": "goldhen-community-2.4b18.12",
       "reason": "Community repository claims support; not an official GoldHEN release. Treat as unverified until binary provenance and target-specific testing."
     }
-  ]
+  ],
+  "provenanceWarning": "Firmware support is based on each source's published claims, not Robinhood execution tests. For 13.52, community sources differ on which incremental b18.11/b18.12 build to select; do not auto-load until the exact payload and route are independently validated."
 }
