@@ -1,7 +1,7 @@
 name: Deploy Robinhood Pages
 on:
   push:
-    branches: [main]
+    branches: [main, integration/webkitty-upstream-6b2f4df]
 permissions:
   contents: read
   pages: write
@@ -14,11 +14,29 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          path: robinhood
+      - name: Fetch pinned WebKitty runtime source
+        uses: actions/checkout@v4
+        with:
+          repository: ArabPixel/WebKitty
+          ref: 6b2f4df39fb427819d3a0ded282c7adc23643d5d
+          path: robinhood/webkitty
+          persist-credentials: false
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p public
+          cp -a robinhood/. public/
+          rm -rf public/.git public/.github
+          test -f public/webkitty/index.html
+          test -f public/webkitty/LICENSE
+          test -f public/webkitty/includes/js/firmware.js
+          test -f public/webkitty/includes/caches/manifest/1302-1352.manifest
       - uses: actions/configure-pages@v5
         with:
           enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: public
       - id: deployment
         uses: actions/deploy-pages@v4
