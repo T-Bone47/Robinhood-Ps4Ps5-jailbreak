@@ -20,7 +20,7 @@ See [firmware-routes.webkitty.json](./firmware-routes.webkitty.json). These are 
 
 ## GoldHEN boundary
 
-GoldHEN is **not included** by this integration. The upstream GitHub release notes for v2.4b18 list support through 11.00, while newer firmware support claims require separate provenance and validation. Do not map a GoldHEN binary to 11.02–13.52 without a release artifact whose support statement covers that exact firmware. Never rename an unrelated payload to `goldhen.bin`.
+GoldHEN binaries are **not bundled**. The host reads `goldhen-builds.json` and exposes a firmware-specific source link. Official GoldHEN v2.4b18 explicitly lists 11.00. The community EEJTek v2.4b18.12 repository claims a wider firmware matrix, including 13.52, but is not an official GoldHEN release; its binary provenance is not independently established here. Treat that as an optional community candidate, not a verified official build. Never rename an unrelated payload to `goldhen.bin`.
 
 ## Licensing
 
@@ -28,8 +28,13 @@ WebKitty is AGPL-3.0-or-later. Its original LICENSE file is preserved in the dep
 
 ## Validation still required
 
-1. Confirm the GitHub Pages build contains the entire `webkitty/` directory.
+1. The Pages workflow validates the pinned runtime files, firmware catalog, GoldHEN provenance metadata and host links on pull requests; it deploys only `main`.
 2. On each target PS4 firmware, run the matching cache page and verify the AppCache reaches `cached` or `noupdate`.
 3. Test each chain on real hardware, record console model and exact firmware, and retain logs.
-4. Verify any user-supplied GoldHEN binary by source provenance and SHA-256 before adding it to a firmware-specific payload mapping.
-5. Keep Robinhood execution controls locked until the above evidence is recorded.
+4. Before any GoldHEN binary is mirrored or auto-loaded, verify its exact source artifact, firmware support statement and SHA-256.
+5. Keep automatic payload execution locked until those checks and hardware tests are complete.
+
+
+## Host navigation
+
+Robinhood's firmware profile includes a top-level **Open WebKitty Runtime** link. It deliberately opens the pinned upstream host as a top-level page rather than embedding the exploit runtime in an iframe, preserving the upstream page's browser context and relative asset paths. The selected firmware is shown in Robinhood's route log; confirm the exact firmware again in WebKitty before starting an exploit.
