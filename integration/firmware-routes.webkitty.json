@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.1",
+  "target": "PS4",
+  "upstream": {
+    "repository": "ArabPixel/WebKitty",
+    "commit": "6b2f4df39fb427819d3a0ded282c7adc23643d5d",
+    "license": "AGPL-3.0-or-later"
+  },
+  "chainSelection": [
+    {
+      "userland": "PSFree",
+      "kernel": "Lapse",
+      "firmwareMin": "7.00",
+      "firmwareMax": "9.60",
+      "withinRobinhoodTarget": "9.00–9.60",
+      "defaultPreference": "7.00–7.55 modular; 8.00–9.60 bundled",
+      "sourceStatus": "UPSTREAM_DOCUMENTED"
+    },
+    {
+      "userland": "CSSFontFace",
+      "kernel": "Lapse",
+      "firmwareMin": "7.00",
+      "firmwareMax": "11.02",
+      "withinRobinhoodTarget": "9.00–11.02",
+      "sourceStatus": "UPSTREAM_DOCUMENTED"
+    },
+    {
+      "userland": "CSSFontFace",
+      "kernel": "Netctrl",
+      "firmwareMin": "9.00",
+      "firmwareMax": "11.02",
+      "sourceStatus": "UPSTREAM_DOCUMENTED"
+    },
+    {
+      "userland": "Slopkit",
+      "kernel": "Lapse",
+      "firmwareMin": "10.00",
+      "firmwareMax": "12.02",
+      "withinRobinhoodTarget": "10.00–12.02",
+      "sourceStatus": "UPSTREAM_DOCUMENTED"
+    },
+    {
+      "userland": "Slopkit",
+      "kernel": "Netctrl",
+      "firmwareMin": "12.50",
+      "firmwareMax": "13.00",
+      "sourceStatus": "UPSTREAM_DOCUMENTED"
+    },
+    {
+      "userland": "Slopkit",
+      "kernel": "Relapse",
+      "firmwareMin": "12.50",
+      "firmwareMax": "13.52",
+      "sourceStatus": "UPSTREAM_DOCUMENTED"
+    }
+  ],
+  "exactFirmwareResolver": "The pinned upstream includes includes/js/firmware.js and chain-specific source/offset tables. Runtime selection uses those files. Range endpoints are not a guarantee that every intermediate point release has identical evidence; consult the exact firmware entry's fw_status before execution.",
+  "robinhoodState": "SOURCE_PINNED_EXECUTION_LOCKED",
+  "payloads": {
+    "goldhen": "NOT_BUNDLED_OR_HASH_VERIFIED",
+    "policy": "Add only a user-authorized GoldHEN release artifact with matching official compatibility evidence and a locally computed SHA-256. Do not infer compatibility or fabricate a checksum."
+  },
+  "offlineCache": {
+    "sourceManifestsPresent": true,
+    "firmwareGroups": [
+      "9xx",
+      "10xx",
+      "11xx",
+      "12xx",
+      "1300",
+      "1302-1352"
+    ],
+    "appcacheRuntime": "Included in pinned upstream source; cache status and offline reload must still be tested on target PS4 browser."
+  },
+  "validation": {
+    "sourceInspection": "Completed",
+    "githubPagesDeployment": "Pending PR merge and workflow run",
+    "ps4BrowserCacheTest": "Not run",
+    "hardwareExploitTest": "Not run",
+    "goldhenInjectionTest": "Not run"
+  }
+}

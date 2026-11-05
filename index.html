@@ -10,8 +10,8 @@
 <header class="ps4-header">
   <div class="brand-chip"><span class="brand-mark">◈</span><div><b>ROBINHOOD v0.1.55</b><small>MERGED FIXED HOST</small></div></div>
   <div class="brand-title"><strong>ROBINHOOD</strong><span>PS4 JAILBREAK HOST</span></div>
-  <div class="top-status"><span>HOST STATUS <b>ONLINE</b></span><i></i><span>ADAPTERS <b id="adapter-count">8/8 READY</b></span><i></i><span>TIME <b id="clock">--:--:--</b></span></div>
-  <span id="build-badge" class="build-badge"></span>
+  <div class="top-status"><span>HOST STATUS <b>ONLINE</b></span><i></i><span>ENGINE <b id="adapter-count">SOURCE PINNED</b></span><i></i><span>TIME <b id="clock">--:--:--</b></span></div>
+  <a class="build-badge" href="./webkitty/index.html" style="text-decoration:none" title="Open pinned WebKitty upstream host">OPEN WEBKITTY RUNTIME ↗</a>
 </header>
 <main class="ps4-main">
   <section class="hero-grid">
@@ -20,7 +20,7 @@
       <div class="stat"><span>⚙ HOST VERSION</span><b>v0.1.55</b></div>
       <div class="stat"><span>▣ PLATFORM</span><b>PS4</b></div>
       <div class="stat"><span>◉ HOST STATUS</span><b class="ok">ONLINE</b></div>
-      <div class="stat"><span>⌘ ADAPTERS</span><b class="ok" id="side-adapters">8/8 READY</b></div>
+      <div class="stat"><span>⌘ ADAPTERS</span><b class="ok" id="side-adapters">SOURCE PINNED</b></div>
       <div class="stat"><span>◷ UPTIME</span><b>00:12:45</b></div>
       <div class="stat"><span>⌖ CONNECTED</span><b>LOCALHOST</b></div>
     </aside>
@@ -38,6 +38,7 @@
       <button class="quick-action" data-action="routes">✥ <span>ROUTE ANALYZER<small>Analyze firmware routes</small></span>›</button>
       <button class="quick-action" data-action="payload">⌗ <span>PAYLOAD STATUS<small>View payload compatibility</small></span>›</button>
       <button class="quick-action" data-action="diagnostics">⌘ <span>SYSTEM DIAGNOSTICS<small>Run host diagnostics</small></span>›</button>
+      <a class="quick-action" href="./webkitty/index.html" target="_blank" rel="noopener">↗ <span>OPEN WEBKITTY ENGINE<small>Pinned upstream exploit host · separate runtime</small></span>›</a>
     </aside>
   </section>
 
@@ -59,8 +60,8 @@
 
     <aside class="panel security-panel">
       <h3>SECURITY NOTICE</h3><div class="security-icon">⌁<span>🔒</span></div>
-      <p>This host separates research, simulated adapters, unverified payloads and runtime execution.</p>
-      <p>Do not treat a firmware tile as proof of hardware compatibility.</p>
+      <p>Robinhood routes to a pinned upstream WebKitty runtime. Use its separate host for firmware-specific exploit and cache flows.</p>
+      <p>Source inclusion is not hardware verification. GoldHEN binaries are not bundled or verified by Robinhood.</p>
       <div class="no-warranty">⚠ NO WARRANTY ⚠</div>
     </aside>
   </section>
@@ -73,7 +74,7 @@
     <div class="host-console"><div class="console-title"><span>Robinhood status</span><span id="console-state">READY</span></div><pre id="host-log">Select an action.</pre></div>
   </section>
 </main>
-<footer class="ps4-footer"><span>◉ CONNECTION <b>LOCALHOST</b></span><span>⊞ PROTOCOL <b>TCP/IP</b></span><span>◈ PORT <b>9020</b></span><strong>ROBINHOOD PS4 HOST v0.1.55<small>BUILT WITH ♥ BY NEMOTRON</small></strong><span>⌘ ADAPTERS <b>8/8 READY</b></span><span>▦ PAYLOADS <b>GATED</b></span><span>◉ DB STATUS <b>CONNECTED</b></span></footer>
+<footer class="ps4-footer"><span>◉ CONNECTION <b>LOCALHOST</b></span><span>⊞ PROTOCOL <b>TCP/IP</b></span><span>◈ PORT <b>9020</b></span><strong>ROBINHOOD PS4 HOST v0.1.55<small>BUILT WITH ♥ BY NEMOTRON</small></strong><span>⌘ ADAPTERS <b>SOURCE PINNED · GATED</b></span><span>▦ PAYLOADS <b>GATED</b></span><span>◉ DB STATUS <b>CONNECTED</b></span></footer>
 <script src="frontend/js/host-status.js"></script><script src="frontend/js/firmware-session.js"></script><script src="frontend/js/navigation.js"></script><script src="frontend/js/build-info.js"></script><script src="frontend/js/host-health.js"></script><script src="frontend/js/firmware-summary.js"></script><script src="frontend/js/quick-actions.js"></script>
 <script>
 (async()=>{

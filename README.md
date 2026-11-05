@@ -4,6 +4,15 @@
 
 This repository contains the fixed PS4 host UI from the Robinhood/Nemotron v0.1.55 merge.
 
+
+## 🧩 WebKitty runtime integration (review branch)
+
+A reviewed integration branch, `integration/webkitty-upstream-6b2f4df`, pins the upstream [WebKitty PS4 host](https://github.com/ArabPixel/WebKitty) at commit `6b2f4df39fb427819d3a0ded282c7adc23643d5d` (AGPL-3.0-or-later). Its GitHub Pages workflow assembles the upstream host under `/webkitty/`, preserving its relative exploit and firmware-cache paths. The Robinhood interface links to that separate host.
+
+See [integration/README.md](integration/README.md) and [firmware route metadata](integration/firmware-routes.webkitty.json).
+
+**Important:** the upstream source includes WebKit/kernel exploit implementations and per-firmware cache manifests, but this does not make every route hardware-verified in Robinhood. GoldHEN binaries are not bundled or verified. The Robinhood status remains gated pending payload provenance, exact-firmware validation, and real-console testing. The branch is not live on GitHub Pages until reviewed and merged into `main`.
+
 ## 🌐 Live host
 
 **Robinhood v0.1.55:**
