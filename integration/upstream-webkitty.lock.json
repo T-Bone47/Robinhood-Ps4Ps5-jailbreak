@@ -1,0 +1,15 @@
+{
+  "integration": "WebKitty upstream runtime",
+  "upstreamRepository": "https://github.com/ArabPixel/WebKitty",
+  "upstreamCommit": "6b2f4df39fb427819d3a0ded282c7adc23643d5d",
+  "upstreamReadme": "https://github.com/ArabPixel/WebKitty/blob/6b2f4df39fb427819d3a0ded282c7adc23643d5d/README.md",
+  "license": "AGPL-3.0-or-later",
+  "deployedPath": "webkitty/",
+  "updatePolicy": "Change the pinned commit only after reviewing upstream compatibility, license notices, manifests, and source diffs.",
+  "executionPolicy": "Robinhood's route UI remains locked until payload provenance and hardware verification are independently recorded.",
+  "notes": [
+    "The upstream source contains the WebKit userland adapters, kernel chain dispatch, firmware tables, and per-firmware AppCache manifests.",
+    "GoldHEN is not bundled by this integration; its binary is closed-source and must be supplied from a trusted release with an independently recorded SHA-256.",
+    "A source-listed route is not a guarantee of success on every console revision. Test each target firmware on physical hardware."
+  ]
+}
