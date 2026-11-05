@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "1.0",
+  "policy": "Metadata and official/source links only. Robinhood does not silently bundle, mirror, or execute third-party payload binaries. Verify the exact artifact and its SHA-256 before any manual installation.",
+  "builds": [
+    {
+      "id": "goldhen-official-2.4b18",
+      "version": "2.4b18",
+      "channel": "OFFICIAL",
+      "source": "https://github.com/GoldHEN/GoldHEN/releases/tag/2.4b18",
+      "downloadPage": "https://github.com/GoldHEN/GoldHEN/releases/tag/2.4b18",
+      "supportedFirmwares": [
+        "5.05",
+        "6.71",
+        "6.72",
+        "9.00",
+        "9.60",
+        "10.00",
+        "10.01",
+        "10.50",
+        "10.70",
+        "10.71",
+        "11.00"
+      ],
+      "status": "OFFICIAL_RELEASE_DOCUMENTED",
+      "binaryBundled": false
+    },
+    {
+      "id": "goldhen-community-2.4b18.12",
+      "version": "2.4b18.12",
+      "channel": "COMMUNITY_REPACKAGED",
+      "source": "https://github.com/EEJTek/GoldHEN_v2.4b18.12",
+      "downloadPage": "https://github.com/EEJTek/GoldHEN_v2.4b18.12",
+      "supportedFirmwares": [
+        "5.05",
+        "5.07",
+        "6.71",
+        "6.72",
+        "7.00",
+        "7.01",
+        "7.02",
+        "7.50",
+        "7.51",
+        "7.55",
+        "8.00",
+        "8.01",
+        "8.03",
+        "8.50",
+        "8.52",
+        "9.00",
+        "9.03",
+        "9.04",
+        "9.50",
+        "9.51",
+        "9.60",
+        "10.00",
+        "10.01",
+        "10.50",
+        "10.70",
+        "10.71",
+        "11.00",
+        "11.02",
+        "11.50",
+        "11.52",
+        "12.00",
+        "12.02",
+        "12.50",
+        "12.52",
+        "13.00",
+        "13.02",
+        "13.04",
+        "13.50",
+        "13.52"
+      ],
+      "status": "COMMUNITY_CLAIM_NOT_OFFICIAL",
+      "binaryBundled": false,
+      "caveat": "The repository README claims these firmware versions. The official GoldHEN project does not publish this release; verify artifact provenance and exact firmware support independently."
+    }
+  ],
+  "selectionRules": [
+    {
+      "firmware": "11.00",
+      "preferredBuild": "goldhen-official-2.4b18",
+      "reason": "Explicitly listed in the official GoldHEN release."
+    },
+    {
+      "firmware": "13.52",
+      "preferredBuild": "goldhen-community-2.4b18.12",
+      "reason": "Community repository claims support; not an official GoldHEN release. Treat as unverified until binary provenance and target-specific testing."
+    }
+  ]
+}
