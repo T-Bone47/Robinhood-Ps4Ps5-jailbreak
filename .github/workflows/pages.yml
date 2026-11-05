@@ -32,6 +32,13 @@ jobs:
           test -f public/webkitty/LICENSE
           test -f public/webkitty/includes/js/firmware.js
           test -f public/webkitty/includes/caches/manifest/1302-1352.manifest
+      # Pin the upstream PS4 host to a reviewed immutable commit.
+      - uses: actions/checkout@v4
+        with:
+          repository: ArabPixel/WebKitty
+          ref: 6b2f4df39fb427819d3a0ded282c7adc23643d5d
+          path: webkitty
+          persist-credentials: false
       - uses: actions/configure-pages@v5
         with:
           enablement: true
