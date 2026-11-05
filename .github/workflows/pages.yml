@@ -1,17 +1,23 @@
-name: Deploy Robinhood Pages
+name: Validate and deploy Robinhood Pages
+
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Check out Robinhood
         uses: actions/checkout@v4
@@ -25,9 +31,6 @@ jobs:
           ref: 6b2f4df39fb427819d3a0ded282c7adc23643d5d
           path: webkitty
           persist-credentials: false
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - name: Assemble Pages artifact
         run: |
           mkdir -p public
@@ -35,13 +38,52 @@ jobs:
           mkdir -p public/webkitty
           cp -a webkitty/. public/webkitty/
           rm -rf public/.git public/.github public/webkitty/.git
+      - name: Validate host, firmware matrix, payload metadata and offline assets
+        run: |
           test -f public/index.html
           test -f public/webkitty/index.html
           test -f public/webkitty/LICENSE
           test -f public/webkitty/includes/js/firmware.js
           test -f public/webkitty/includes/caches/manifest/1302-1352.manifest
-      - uses: actions/upload-pages-artifact@v3
+          node <<'NODE'
+          const fs = require('fs');
+          const routes = JSON.parse(fs.readFileSync('public/integration/firmware-routes.webkitty.json', 'utf8'));
+          const catalog = JSON.parse(fs.readFileSync('public/frontend/firmware-tool-catalog.json', 'utf8'));
+          const goldhen = JSON.parse(fs.readFileSync('public/integration/goldhen-builds.json', 'utf8'));
+          for (const fw of ['11.00', '13.52']) {
+            if (!catalog.profiles[fw]) throw new Error('Missing firmware profile: ' + fw);
+          }
+          if (!goldhen.builds.some(b => b.channel === 'OFFICIAL' && b.version === '2.4b18' && b.supportedFirmwares.includes('11.00'))) {
+            throw new Error('Official GoldHEN 11.00 compatibility metadata missing');
+          }
+          if (!goldhen.builds.some(b => b.channel === 'COMMUNITY_REPACKAGED' && b.supportedFirmwares.includes('13.52'))) {
+            throw new Error('Community 13.52 candidate metadata missing');
+          }
+          if (goldhen.builds.some(b => b.binaryBundled)) throw new Error('Unreviewed GoldHEN binary must not be bundled');
+          if (!routes.chainSelection.length) throw new Error('No upstream route metadata found');
+          const html = fs.readFileSync('public/index.html', 'utf8');
+          for (const token of ['id="build-badge"', 'id="launch-runtime"', 'integration/goldhen-builds.json']) {
+            if (!html.includes(token)) throw new Error('Missing host integration token: ' + token);
+          }
+          console.log('Validated firmware catalog, GoldHEN provenance metadata, runtime links and pinned WebKitty assets.');
+          NODE
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: public
-      - id: deployment
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Deploy Pages artifact
+        id: deployment
         uses: actions/deploy-pages@v4

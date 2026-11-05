@@ -48,9 +48,9 @@ This is a GitHub Pages **project site**. GitHub project sites use the pattern `h
 
 The PS4 host is matrix-driven and exposes the current research firmware set instead of the previous hard-coded 6.72 / 7.02 / 7.5X / 9.00 buttons.
 
-Current selector entries include 5.05, 6.72, 7.00, 7.02, 7.55, 7.5X, 8.03, 8.52, 9.00, 9.60, 10.00, 10.01, 10.50, 10.70, 10.71, 11.00, 11.02, 12.02, 12.50, 12.52 and 12.02–12.52.
+Current selector entries include the existing legacy set plus 9.03, 9.04, 9.50, 9.51, 11.50, 11.52, 12.00, 13.00, 13.02, 13.04, 13.50 and 13.52. The route catalog records upstream chain candidates separately from Robinhood hardware-test status.
 
-These entries are **not a promise of exploit availability**. They are firmware-matrix entries used to route research/evidence state. Routes remain explicitly locked until their evidence/adapter gates are satisfied.
+These entries are **not a promise of exploit availability**. Where shown, WebKitty chain names are upstream range candidates, not a guarantee for every point release. Robinhood keeps execution locked until exact-firmware evidence, payload provenance, and hardware validation are recorded.
 
 ## 🧪 PS4 local/self-hosted option
 

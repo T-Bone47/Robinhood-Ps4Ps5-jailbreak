@@ -1,1 +1,392 @@
-{"version":"1.0","profiles":{"6.72":{"title":"PS4 Jailbreak 6.72","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED"},"7.02":{"title":"PS4 Jailbreak 7.02","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED"},"7.5X":{"title":"PS4 Jailbreak 7.5X","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED"},"9.00":{"title":"PS4 Jailbreak 9.00","primary":"Exploit + GoldHEN V2b","toolCards":[],"executionState":"LOCKED"},"5.05":{"title":"PS4 Firmware 5.05","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"UNKNOWN"},"7.00":{"title":"PS4 Firmware 7.00","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"PARTIAL"},"7.55":{"title":"PS4 Firmware 7.55","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"PARTIAL"},"8.03":{"title":"PS4 Firmware 8.03","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"PARTIAL"},"8.52":{"title":"PS4 Firmware 8.52","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"PARTIAL"},"9.60":{"title":"PS4 Firmware 9.60","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"PARTIAL"},"10.00":{"title":"PS4 Firmware 10.00","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"PARTIAL"},"10.01":{"title":"PS4 Firmware 10.01","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"PARTIAL"},"10.50":{"title":"PS4 Firmware 10.50","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"PARTIAL"},"10.70":{"title":"PS4 Firmware 10.70","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"PARTIAL"},"10.71":{"title":"PS4 Firmware 10.71","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"PARTIAL"},"11.00":{"title":"PS4 Firmware 11.00","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"PARTIAL"},"11.02":{"title":"PS4 Firmware 11.02","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"UNKNOWN"},"12.02":{"title":"PS4 Firmware 12.02","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"UNKNOWN"},"12.50":{"title":"PS4 Firmware 12.50","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"UNKNOWN"},"12.52":{"title":"PS4 Firmware 12.52","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"REPORTED"},"12.02-12.52":{"title":"PS4 Firmware 12.02-12.52","primary":"Exploit + GoldHEN","toolCards":[],"executionState":"LOCKED","matrixStatus":"REPORTED"}}}
+{
+  "version": "1.1",
+  "profiles": {
+    "6.72": {
+      "title": "PS4 Jailbreak 6.72",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED"
+    },
+    "7.02": {
+      "title": "PS4 Jailbreak 7.02",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "7.5X": {
+      "title": "PS4 Jailbreak 7.5X",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "9.00": {
+      "title": "PS4 Jailbreak 9.00",
+      "primary": "Exploit + GoldHEN V2b",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)",
+        "CSSFontFace + Netctrl (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "5.05": {
+      "title": "PS4 Firmware 5.05",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UNKNOWN"
+    },
+    "7.00": {
+      "title": "PS4 Firmware 7.00",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "PARTIAL",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "7.55": {
+      "title": "PS4 Firmware 7.55",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "PARTIAL",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "8.03": {
+      "title": "PS4 Firmware 8.03",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "PARTIAL",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "8.52": {
+      "title": "PS4 Firmware 8.52",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "PARTIAL",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "9.60": {
+      "title": "PS4 Firmware 9.60",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "PARTIAL",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)",
+        "CSSFontFace + Netctrl (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "10.00": {
+      "title": "PS4 Firmware 10.00",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "PARTIAL",
+      "routeCandidates": [
+        "CSSFontFace + Lapse (upstream range candidate)",
+        "CSSFontFace + Netctrl (upstream range candidate)",
+        "Slopkit + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "10.01": {
+      "title": "PS4 Firmware 10.01",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "PARTIAL",
+      "routeCandidates": [
+        "CSSFontFace + Lapse (upstream range candidate)",
+        "CSSFontFace + Netctrl (upstream range candidate)",
+        "Slopkit + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "10.50": {
+      "title": "PS4 Firmware 10.50",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "PARTIAL",
+      "routeCandidates": [
+        "CSSFontFace + Lapse (upstream range candidate)",
+        "CSSFontFace + Netctrl (upstream range candidate)",
+        "Slopkit + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "10.70": {
+      "title": "PS4 Firmware 10.70",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "PARTIAL",
+      "routeCandidates": [
+        "CSSFontFace + Lapse (upstream range candidate)",
+        "CSSFontFace + Netctrl (upstream range candidate)",
+        "Slopkit + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "10.71": {
+      "title": "PS4 Firmware 10.71",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "PARTIAL",
+      "routeCandidates": [
+        "CSSFontFace + Lapse (upstream range candidate)",
+        "CSSFontFace + Netctrl (upstream range candidate)",
+        "Slopkit + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "11.00": {
+      "title": "PS4 Firmware 11.00",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "PARTIAL",
+      "routeCandidates": [
+        "CSSFontFace + Lapse (upstream range candidate)",
+        "CSSFontFace + Netctrl (upstream range candidate)",
+        "Slopkit + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "11.02": {
+      "title": "PS4 Firmware 11.02",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "CSSFontFace + Lapse (upstream range candidate)",
+        "CSSFontFace + Netctrl (upstream range candidate)",
+        "Slopkit + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "12.02": {
+      "title": "PS4 Firmware 12.02",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "Slopkit + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "12.50": {
+      "title": "PS4 Firmware 12.50",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "Slopkit + Netctrl (upstream range candidate)",
+        "Slopkit + Relapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "12.52": {
+      "title": "PS4 Firmware 12.52",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "REPORTED",
+      "routeCandidates": [
+        "Slopkit + Netctrl (upstream range candidate)",
+        "Slopkit + Relapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "12.02-12.52": {
+      "title": "PS4 Firmware 12.02-12.52",
+      "primary": "Exploit + GoldHEN",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "REPORTED",
+      "routeCandidates": [
+        "Slopkit + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "9.03": {
+      "title": "PS4 Firmware 9.03",
+      "primary": "Open WebKitty route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)",
+        "CSSFontFace + Netctrl (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "9.04": {
+      "title": "PS4 Firmware 9.04",
+      "primary": "Open WebKitty route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)",
+        "CSSFontFace + Netctrl (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "9.50": {
+      "title": "PS4 Firmware 9.50",
+      "primary": "Open WebKitty route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)",
+        "CSSFontFace + Netctrl (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "9.51": {
+      "title": "PS4 Firmware 9.51",
+      "primary": "Open WebKitty route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "PSFree + Lapse (upstream range candidate)",
+        "CSSFontFace + Lapse (upstream range candidate)",
+        "CSSFontFace + Netctrl (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "11.50": {
+      "title": "PS4 Firmware 11.50",
+      "primary": "Open WebKitty route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "Slopkit + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "11.52": {
+      "title": "PS4 Firmware 11.52",
+      "primary": "Open WebKitty route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "Slopkit + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "12.00": {
+      "title": "PS4 Firmware 12.00",
+      "primary": "Open WebKitty route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "Slopkit + Lapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "13.00": {
+      "title": "PS4 Firmware 13.00",
+      "primary": "Open WebKitty route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "Slopkit + Netctrl (upstream range candidate)",
+        "Slopkit + Relapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "13.02": {
+      "title": "PS4 Firmware 13.02",
+      "primary": "Open WebKitty route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "Slopkit + Relapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "13.04": {
+      "title": "PS4 Firmware 13.04",
+      "primary": "Open WebKitty route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "Slopkit + Relapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "13.50": {
+      "title": "PS4 Firmware 13.50",
+      "primary": "Open WebKitty route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "Slopkit + Relapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    },
+    "13.52": {
+      "title": "PS4 Firmware 13.52",
+      "primary": "Open WebKitty route selector",
+      "toolCards": [],
+      "executionState": "LOCKED",
+      "matrixStatus": "UPSTREAM_CANDIDATE",
+      "routeCandidates": [
+        "Slopkit + Relapse (upstream range candidate)"
+      ],
+      "evidenceNote": "Upstream source/range candidate only; exact firmware status and console testing required."
+    }
+  },
+  "matrixNote": "Firmware route candidates are sourced from the pinned WebKitty route metadata. They are not proof of exact-firmware success or Robinhood hardware validation."
+}
